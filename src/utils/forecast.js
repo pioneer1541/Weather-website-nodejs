@@ -9,7 +9,7 @@ const forecast = (position,callback) => {
         }else if (body.current.observation_time == null){
             callback('Unable to find the location,Try another search',undefined)
         }else{
-            callback(undefined,'There is ' + body.location.name + ',the weather is ' + body.current.weather_descriptions[0] + ' and its temperature is ' + body.current.temperature + '  degrees! ')
+            callback(undefined,body.location.name + ',its weather is ' + body.current.weather_descriptions[0] + ' and its temperature is ' + body.current.temperature + '  degrees! ')
         }
     })
 }
