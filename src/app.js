@@ -20,9 +20,10 @@ const app = express()
 const publicDirectoryPath = path.join(__dirname,'../public')
 
 //setup handlebars engine and views location
-app.set('view engine','hbs')
+app.set('view engine','html')
 app.set('views',viewsPath)
 hbs.registerPartials(partialsPath)
+app.engine('html',hbs.__express);
 
 //Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
