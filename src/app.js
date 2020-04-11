@@ -12,7 +12,7 @@ const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
-const port = 80
+const port = process.env.PORT || 80
 
 
 //define paths for Express config
