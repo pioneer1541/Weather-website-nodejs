@@ -29,6 +29,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 app.get('/index',(req,res) =>{
+    console.log(1)
     if (!req.query.search) {
         return res.send({
             error:'You must provide a address for search'
@@ -81,6 +82,7 @@ app.get('/help',(req,res)=>{
 })
 
 app.get('',(req,res) =>{
+    console.log(1)
     res.render('index',{
         title:'Weather App',
         name:'Vincent'
@@ -122,5 +124,5 @@ app.get('*',(req,res)=>{
 
 
 app.listen(port,() => {
-    console.log('Service is up on port')
+    console.log('Service is up on port ' + port)
 });
