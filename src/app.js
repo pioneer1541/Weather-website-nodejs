@@ -20,7 +20,8 @@ const port = process.env.PORT || 3000
 const publicDirectoryPath = path.join(__dirname,'../public')
 
 //setup handlebars engine and views location
-app.set('view engine','hbs')
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
 app.set('views',viewsPath)
 hbs.registerPartials(partialsPath)
 
