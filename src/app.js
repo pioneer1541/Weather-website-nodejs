@@ -12,7 +12,7 @@ const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 80
 
 
 //define paths for Express config
@@ -28,7 +28,7 @@ hbs.registerPartials(partialsPath)
 //Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
-app.get('/weather',(req,res) =>{
+app.get('/index',(req,res) =>{
     if (!req.query.search) {
         return res.send({
             error:'You must provide a address for search'
