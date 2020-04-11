@@ -1,31 +1,14 @@
-// fetch('http://puzzle.mead.io/puzzle')
-//     .then((response) => {
-//         response.json().then((data) =>{
-//             console.log(data)
-//         })
-//     })
-
-// fetch('http://localhost:3000/weather?search=Palmerston%20North').then((res)=>{
-//     res.json().then((data) => {
-//         if (data.error) {
-//             return console.log('error')
-//         }
-//         console.log(data.location)
-//         console.log(data.forecastData)
-//     })
-// })
-
 
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const locationText = document.querySelector('#locationText')
 const forecastText = document.querySelector('#forecastText')
-
+let city = search.placeholder
 
 
 weatherForm.addEventListener('submit',(event) => {
     event.preventDefault()
-    const city = search.placeholder
+    
     if (search.value != "") {
         city = search.value
     }
